@@ -8,9 +8,9 @@
     <link rel="stylesheet" href="admin.css">
 </head>
 
-<body>
+<body class="admin-login-page">
 
-    <h1>Admin Login</h1>
+    <h1 id="loginHead">Admin Login</h1>
 
     <form id="loginForm">
         <label for="username">Username</label>
@@ -18,6 +18,7 @@
 
         <label for="password">Password</label>
         <input type="password" id="password" required>
+        <p id="loginMessage"></p>
 
         <button type="submit">Login</button>
     </form>

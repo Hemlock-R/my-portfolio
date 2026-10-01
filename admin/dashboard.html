@@ -18,6 +18,63 @@
     <main>
         <h2>Contact Submissions</h2>
 
+        <div class="dashboard-summary">
+
+            <div class="summary-card">
+                <span>
+                    Total Submissions
+                </span>
+                <strong id="submissionCount">0</strong>
+                <p>All contact requests</p>
+            </div>
+
+            <div class="summary-card">
+                <span>Latest Submissions</span>
+                <strong id="latestSubmission">-</strong>
+                <p>Most recent contact</p>
+            </div>
+
+            <div class="summary-card">
+                <span>This Week</span>
+                <strong id="weeklySubmissions">0</strong>
+                <p>Submissions this week</p>
+            </div>
+            
+            <div class="summary-card">
+                <span>This Month</span>
+                <strong id="monthlySubmissions">0</strong>
+                <p>Submissions this month</p>
+            </div>
+        </div>
+
+        <div class="dashboard-tools">
+            <input 
+            type="search"
+            id="searchContacts"
+            placeholder="Search submissions...">
+
+            <select id="sortContacts">
+                <option value="newest">Newest first</option>
+                <option value="oldest">Oldest first</option>
+                <option value="name">Name A–Z</option>
+            </select>
+
+            <button 
+            type="button" 
+            id="refreshContactsButton" 
+            class="refresh-contacts-button">
+                Refresh
+            </button>
+
+            <button 
+                type="button"
+                id="exportContactsButton"
+                class="export-contacts-button">
+               Export CSV 
+            </button>
+
+        </div>
+
         <div class="table-container">
             <table>
                 <thead>
@@ -35,7 +92,112 @@
                 </tbody>
             </table>
         </div>
+
+        <div class="pagination" id="pagination">
+            <button type="button" id="previousPageButton">
+                Previous
+            </button>
+        
+            <span id="pageInfo">Page 1</span>
+        
+            <button type="button" id="nextPageButton">
+                Next
+            </button>
+        </div>
     </main>
+
+    <!-- Submission Details -->
+    
+    <div id="submissionModal" class="submission-modal">
+    
+        <div class="submission-modal-content">
+    
+            <button type="button" id="closeSubmissionModal" class="close-submission-modal">
+                ×
+            </button>
+    
+            <h2>Submission Details</h2>
+    
+            <div class="submission-details">
+    
+                <div>
+                    <span>Name</span>
+                    <strong id="detailName"></strong>
+                </div>
+    
+                <div>
+                    <span>Email</span>
+                    <strong id="detailEmail"></strong>
+                </div>
+    
+                <div>
+                    <span>Phone</span>
+                    <strong id="detailPhone"></strong>
+                </div>
+    
+                <div>
+                    <span>Date</span>
+                    <strong id="detailDate"></strong>
+                </div>
+    
+                <div class="detail-message">
+                    <span>Message</span>
+                    <p id="detailMessage"></p>
+                </div>
+
+                <div class="contact-actions">
+                
+                    <a id="emailContactButton" href="#">
+                        Email
+                    </a>
+                
+                    <a id="callContactButton" href="#">
+                        Call
+                    </a>
+                
+                    <a id="whatsappContactButton" href="#" target="_blank">
+                        WhatsApp
+                    </a>
+                
+                </div>
+
+                <button type="button" id="deleteSubmissionButton" class="delete-submission-button">
+                    Delete Submission
+                </button>
+    
+            </div>
+    
+        </div>
+    
+    </div>
+
+    <!-- Delete Confirmation -->
+    
+    <div id="deleteConfirmModal" class="delete-confirm-modal">
+    
+        <div class="delete-confirm-content">
+    
+            <h2>Delete Submission?</h2>
+    
+            <p>
+                Are you sure you want to delete this submission?
+            </p>
+    
+            <div class="delete-confirm-actions">
+    
+                <button type="button" id="cancelDeleteButton">
+                    Cancel
+                </button>
+    
+                <button type="button" id="confirmDeleteButton">
+                    Delete
+                </button>
+    
+            </div>
+    
+        </div>
+    
+    </div>
 
     <script src="admin.js"></script>
 
