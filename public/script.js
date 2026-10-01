@@ -216,36 +216,42 @@ const projectDetailsNumber = projectDetails.querySelector(".project-details-numb
 const projectDetailsTitle = projectDetails.querySelector("h3");
 const projectDetailsDescription = projectDetails.querySelector("p");
 const projectDetailsTechnologies = projectDetails.querySelector(".project-technologies");
+const projectDetailsLink = projectDetails.querySelector("a");
 
 const projectData = [
   {
     number: "01",
-    title: "Business Portfolio Website",
+    title: "CediFlow",
     description:
-      "A professional website designed to present a business, its services, and previous work.",
-    technologies: ["HTML", "CSS", "JavaScript"],
+      "A financial health and wealth tracking application designed to help users monitor their finances, goals, transactions, and overall financial progress.",
+    technologies: ["HTML5", "CSS3", "JavaScript", "LocalStorage", "PWA"],
+    link: "https://cediflow-finance-tracker.onrender.com"
   },
+
   {
     number: "02",
-    title: "Service Request System",
+    title: "Celebra",
     description:
-      "A full-stack system that collects customer requests and lets an administrator manage them from a private dashboard.",
-    technologies: ["HTML", "CSS", "JavaScript", "Node.js", "PostgreSQL"],
+      "A birthday and relationship manager designed to help users keep track of birthdays, important dates, relationships, and celebrations.",
+    technologies: ["HTML5", "CSS3", "JavaScript", "LocalStorage"],
+    link: "https://celebra-birthday-manager.onrender.com"
   },
+
   {
     number: "03",
-    title: "E-Commerce Platform",
-    description:
-      "An online shopping system with products, customer orders, and an administrative management area.",
-    technologies: ["HTML", "CSS", "JavaScript", "Node.js", "PostgreSQL"],
+    title: "Coming Soon",
+    description: "A new project is currently being developed.",
+    technologies: [],
+    link: "#"
   },
+
   {
     number: "04",
-    title: "School Management System",
-    description:
-      "A system for managing students, courses, records, and administrative activities.",
-    technologies: ["HTML", "CSS", "JavaScript", "Node.js", "PostgreSQL"],
-  }
+    title: "Coming Soon",
+    description: "A new project is currently being developed.",
+    technologies: [],
+    link: "#"
+  },
 ];
 
 let activeProject = 1;
@@ -277,12 +283,22 @@ function updateProjectCarousel() {
   projectDetailsDescription.textContent = project.description;
 
   projectDetailsTechnologies.innerHTML = "";
+  
 
   project.technologies.forEach((technology) => {
     const technologyElement = document.createElement("span");
     technologyElement.textContent = technology;
     projectDetailsTechnologies.appendChild(technologyElement);
   });
+
+  projectDetailsLink.href = project.link;
+
+  if (project.link === "#") {
+    projectDetailsLink.removeAttribute("target");
+  } else {
+    projectDetailsLink.target = "_blank";
+    projectDetailsLink.rel = "noopener";
+  }
 }
 
 
