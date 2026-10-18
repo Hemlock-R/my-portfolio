@@ -220,29 +220,38 @@ const projectDetailsLink = projectDetails.querySelector("a");
 
 const projectData = [
   {
-    number: "01",
-    title: "CediFlow",
-    description:
-      "A financial health and wealth tracking application designed to help users monitor their finances, goals, transactions, and overall financial progress.",
-    technologies: ["HTML5", "CSS3", "JavaScript", "LocalStorage", "PWA"],
-    link: "https://cediflow-finance-tracker.onrender.com"
-  },
-
-  {
     number: "02",
     title: "Celebra",
     description:
       "A birthday and relationship manager designed to help users keep track of birthdays, important dates, relationships, and celebrations.",
     technologies: ["HTML5", "CSS3", "JavaScript", "LocalStorage"],
-    link: "https://celebra-birthday-manager.onrender.com"
+    link: "https://celebra-birthday-manager.onrender.com",
+  },
+
+  {
+    number: "01",
+    title: "CediFlow",
+    description:
+      "A financial health and wealth tracking application designed to help users monitor their finances, goals, transactions, and overall financial progress.",
+    technologies: [
+      "HTML5",
+      "CSS3",
+      "JavaScript (ES6+)",
+      "React",
+      "Vite",
+      "LocalStorage",
+      "PWA",
+    ],
+    link: "https://cediflow-3W19.onrender.com",
   },
 
   {
     number: "03",
-    title: "Coming Soon",
-    description: "A new project is currently being developed.",
-    technologies: [],
-    link: "#"
+    title: "Ember",
+    description:
+      "A minimal daily planner built to help people instantly log tasks, check off priorities, and keep their schedules organized even when they lose internet connection.",
+    technologies: ["HTML5", "CSS3", "Javascript", "PWA", "Service Workers"],
+    link: "https://ember-tasks.onrender.com",
   },
 
   {
@@ -250,7 +259,7 @@ const projectData = [
     title: "Coming Soon",
     description: "A new project is currently being developed.",
     technologies: [],
-    link: "#"
+    link: "#",
   },
 ];
 

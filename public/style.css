@@ -47,24 +47,18 @@ header {
 
     width: min(92%, 1050px);
     min-height: 68px;
-
     display: flex;
     align-items: center;
     justify-content: space-between;
-
     padding: 8px 10px 8px 16px;
-
     background: rgba(13, 13, 18, 0.78);
     border: 1px solid rgba(255, 255, 255, 0.10);
     border-radius: 22px;
-
-    backdrop-filter: blur(22px);
-    -webkit-backdrop-filter: blur(22px);
-
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
     box-shadow:
         0 12px 40px rgba(0, 0, 0, 0.28),
         inset 0 1px 0 rgba(255, 255, 255, 0.04);
-
     transition:
         background 0.3s ease,
         border-color 0.3s ease,
@@ -74,54 +68,39 @@ header {
 
 header nav {
     flex: 1;
-
     display: flex;
     align-items: center;
     justify-content: flex-end;
-
     gap: 4px;
 }
 
-
 header nav a {
     position: relative;
-
     display: inline-flex;
     align-items: center;
     justify-content: center;
-
     padding: 11px 15px;
-
     color: rgba(255, 255, 255, 0.58);
-
     text-decoration: none;
     font-size: 15px;
     font-weight: 500;
     letter-spacing: 0.02em;
-
     border-radius: 14px;
-
     transition:
         color 0.25s ease,
         background 0.25s ease,
         transform 0.25s ease;
 }
 
-
 header nav a::after {
     content: "";
-
     position: absolute;
     left: 50%;
     bottom: 5px;
-
     width: 0;
     height: 2px;
-
     border-radius: 10px;
-
     background: #ffffff;
-
     transform: translateX(-50%);
     transition: width 0.25s ease;
 }
@@ -1101,6 +1080,7 @@ section h2 {
     font-size: 24px;
     font-weight: 600;
     text-shadow: none;
+    text-align: center;
 }
 
 /* =========================================================
@@ -1770,6 +1750,182 @@ textarea:focus-visible {
     #about p {
         max-width: 720px;
     }
+
+    header {
+        width: 92%;
+    }
+
+    header nav {
+        gap: clamp(2px, 0.5vw, 8px);
+    }
+
+    header nav a {
+        padding:
+            clamp(8px, 1.2vw, 10px)
+            clamp(8px, 1.5vw, 15px);
+
+        font-size: clamp(20px, 1vw, 10px);
+
+        letter-spacing:
+            clamp(0.7px, 0.15vw, 1.4px);
+    }
+
+    /* HERO */
+
+    #hero {
+        min-height: 100svh;
+
+        padding-top: 120px;
+        padding-bottom: 90px;
+    }
+
+    #hero .hero-text,
+    #hero .hero-image {
+        height: clamp(500px, 72svh, 650px);
+    }
+
+    #hero .hero-text {
+        width: 54%;
+        padding: 30px;
+    }
+
+    #hero .hero-image {
+        width: 46%;
+        margin-left: -7%;
+        height: auto;
+    }
+
+    #hero h1 {
+        font-size: clamp(52px, 8vw, 90px);
+        letter-spacing: clamp(-4px, -0.4vw, -3px);
+    }
+
+
+    /* ABOUT */
+
+    #about {
+        padding-top: 110px;
+        padding-bottom: 110px;
+    }
+
+    #about .about-main-heading {
+        font-size: clamp(45px, 7vw, 72px);
+    }
+
+
+    /* SERVICES */
+
+    #services {
+        gap: 90px;
+
+        padding-top: 22px;
+        padding-bottom: 1px;
+    }
+
+    #services .services-left h2 {
+        font-size: clamp(42px, 6vw, 70px);
+    }
+
+    #services .tech-item {
+        font-size: 30px;
+    }
+
+    #services .services-right article {
+        padding: 46px;
+    }
+
+    #services .services-right h3 {
+        font-size: 40px;
+    }
+
+    #services .services-right p {
+        font-size: 26px;
+    }
+
+
+    /* PROJECTS */
+
+    #projects {
+        padding-top: 200px;
+        padding-bottom: 220px;
+    }
+
+    #projects .projects-carousel {
+        height: 700px;
+    }
+
+    #projects .project-card[data-position="center"],
+    #projects .project-card[data-position="left"],
+    #projects .project-card[data-position="right"] {
+        width: 600px;
+        height: 500px;
+        padding: 50px;
+    }
+
+    #projects .project-card[data-position="left"] {
+        transform:
+            translate(calc(-50% - 245px), -50%)
+            scale(0.70)
+            rotateY(18deg);
+    }
+
+    #projects .project-card[data-position="right"] {
+        transform:
+            translate(calc(-50% + 245px), -50%)
+            scale(0.70)
+            rotateY(-18deg);
+    }
+
+    #projects .project-details {
+        margin-top: 0;
+    }
+
+
+    /* SKILLS */
+
+    #skills {
+        padding-top: 220px;
+        padding-bottom: 220px;
+    }
+
+
+    /* CERTIFICATES */
+
+    #certificates {
+        padding-top: 220px;
+        padding-bottom: 220px;
+    }
+
+    #about .about-currently {
+        margin-top: 60px;
+    }
+
+    #about .currently-items {
+        gap: 44px;
+    }
+
+    #about .currently-item {
+        min-width: 0;
+
+        flex: 1 1 28%;
+
+        gap: 16px;
+    }
+
+    #about .currently-icon {
+        font-size: 30px;
+    }
+
+    #about .currently-item h5 {
+        font-size: 13px;
+    }
+
+    #about .currently-item p {
+        max-width: 260px;
+
+        font-size: 20px;
+        line-height: 1.45;
+    }
 }
 
 
@@ -1797,7 +1953,7 @@ textarea:focus-visible {
             clamp(8px, 1.2vw, 10px)
             clamp(8px, 1.5vw, 15px);
 
-        font-size: clamp(8px, 1vw, 10px);
+        font-size: clamp(13px, 1vw, 10px);
 
         letter-spacing:
             clamp(0.7px, 0.15vw, 1.4px);
@@ -1826,6 +1982,7 @@ textarea:focus-visible {
     #hero .hero-image {
         width: 46%;
         margin-left: -7%;
+        height: auto;
     }
 
     #hero h1 {
@@ -1928,6 +2085,37 @@ textarea:focus-visible {
         padding-top: 110px;
         padding-bottom: 110px;
     }
+
+    #about .about-currently {
+        margin-top: 30px;
+    }
+
+    #about .currently-items {
+        gap: 22px;
+    }
+
+    #about .currently-item {
+        min-width: 0;
+
+        flex: 1 1 28%;
+
+        gap: 8px;
+    }
+
+    #about .currently-icon {
+        font-size: 15px;
+    }
+
+    #about .currently-item h5 {
+        font-size: 13px;
+    }
+
+    #about .currently-item p {
+        max-width: 130px;
+
+        font-size: 10px;
+        line-height: 1.45;
+    }
 }
 
 
@@ -1994,6 +2182,7 @@ header nav a {
     #hero .hero-image {
         width: 42%;
         margin-left: -8%;
+        height: auto;
     }
 
     #hero .hero-image img {
@@ -2266,6 +2455,7 @@ header nav a {
         bottom: 22px;
     }
 
+
     #projects .project-card h3 {
         font-size: 21px;
     }
@@ -2511,6 +2701,8 @@ header nav a {
         height: 25px;
     }
 
+    
+
     header nav {
         min-width: 0;
         gap: 0;
@@ -2539,6 +2731,8 @@ header nav a {
     header nav a:hover::after {
         width: 12px;
     }
+
+    
 }
 
 /* =========================
