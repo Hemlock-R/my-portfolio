@@ -179,16 +179,12 @@ section h2 {
 
 #hero {
     position: relative;
-
     min-height: 100vh;
-
     display: flex;
     align-items: center;
     justify-content: center;
-
     padding-top: 170px;
     padding-bottom: 130px;
-
     overflow: hidden;
 }
 
@@ -858,14 +854,6 @@ section h2 {
     opacity: 0.45;
 }
 
-#projects .project-card-content {
-    position: absolute;
-
-    left: 30px;
-    right: 30px;
-    bottom: 30px;
-}
-
 #projects .project-card h3 {
     margin: 0;
 
@@ -1038,8 +1026,7 @@ section h2 {
     z-index: 0;
 }
 
-#projects .project-card-number,
-#projects .project-card-content {
+#projects .project-card-number {
     position: relative;
     z-index: 2;
 }
@@ -1060,28 +1047,7 @@ section h2 {
 
 
 
-/* PROJECT CARD TITLE BACKGROUND */
-#projects .project-card-content {
-    position: absolute;
-    left: 20px;
-    right: 20px;
-    bottom: 20px;
-    z-index: 3;
-    padding: 12px 16px;
-    border-radius: 10px;
-    background: rgba(0, 0, 0, 0.55);
-    backdrop-filter: blur(6px);
-    -webkit-backdrop-filter: blur(6px);
-}
 
-#projects .project-card-content h3 {
-    margin: 0;
-    color: #ffffff;
-    font-size: 24px;
-    font-weight: 600;
-    text-shadow: none;
-    text-align: center;
-}
 
 /* =========================================================
    SKILLS
@@ -2447,12 +2413,6 @@ header nav a {
 
     #projects .project-card-number {
         font-size: 11px;
-    }
-
-    #projects .project-card-content {
-        left: 22px;
-        right: 22px;
-        bottom: 22px;
     }
 
 
